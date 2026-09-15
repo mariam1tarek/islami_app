@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:islami_app/common/app_colors.dart';
 import 'package:islami_app/gen/assets.gen.dart';
-import 'package:islami_app/models/sura_model.dart';
+import 'package:islami_app/models/sura_model.dart'; // تأكدي من مسار الـ Model عندك
 
 class SurasListView extends StatelessWidget {
    SurasListView({super.key});
 
+  // قائمة الـ 10 سور
   final List<SuraModel> suras = [
     SuraModel(englishName: "Al-Fatiha", arabicName: "الفاتحة", versesCount: "7 Verses"),
     SuraModel(englishName: "Al-Baqarah", arabicName: "البقرة", versesCount: "286 Verses"),
@@ -35,11 +36,11 @@ class SurasListView extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         ListView.separated(
-          itemCount: suras.length,
+          itemCount: suras.length, // تم استخدام طول القائمة (10)
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            final sura = suras[index];
+            final sura = suras[index]; // جلب بيانات السورة الحالية
             return ListTile(
               minVerticalPadding: 0,
               contentPadding: const EdgeInsets.all(0),
@@ -55,7 +56,7 @@ class SurasListView extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    (index + 1).toString(),
+                    (index + 1).toString(), // رقم السورة
                     style: const TextStyle(
                       color: AppColors.wihteColor,
                       fontSize: 13,
@@ -65,7 +66,7 @@ class SurasListView extends StatelessWidget {
                 ],
               ),
               title: Text(
-                sura.englishName,
+                sura.englishName, // اسم السورة بالإنجليزي
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -73,7 +74,7 @@ class SurasListView extends StatelessWidget {
                 ),
               ),
               subtitle: Text(
-                sura.versesCount,
+                sura.versesCount, // عدد الآيات
                 style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -81,7 +82,7 @@ class SurasListView extends StatelessWidget {
                 ),
               ),
               trailing: Text(
-                sura.arabicName,
+                sura.arabicName, // اسم السورة بالعربي في الـ trailing
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
