@@ -4,7 +4,7 @@ import 'package:islami_app/gen/assets.gen.dart';
 import 'package:islami_app/models/intro_content.dart';
 import 'package:islami_app/widgets/intro_dot_indicator.dart';
 import 'package:islami_app/widgets/intro_page_item.dart';
-import 'package:islami_app/screens/home_screen.dart'; // مسار صفحة HomeScreen
+import 'package:islami_app/screens/home_screen.dart'; 
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -104,7 +104,6 @@ class _IntroScreenState extends State<IntroScreen> {
                           curve: Curves.easeInOut,
                         );
                       } else {
-                        // الانتقال لـ HomeScreen باستخدام pushReplacement لمنع الرجوع لـ IntroScreen
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
