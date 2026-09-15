@@ -13,7 +13,6 @@ class MostRecentlyView extends StatefulWidget {
 }
 
 class _MostRecentlyViewState extends State<MostRecentlyView> {
-  // قائمة أول 10 سور في القرآن الكريم كبداية (يمكنك تعديلها لاحقاً حسب السور المفتوحة)
   final List<SuraModel> recentSuras = [
     SuraModel(englishName: "Al-Fatiha", arabicName: "الفاتحة", versesCount: "7 Verses"),
     SuraModel(englishName: "Al-Baqarah", arabicName: "البقرة", versesCount: "286 Verses"),
@@ -27,7 +26,6 @@ class _MostRecentlyViewState extends State<MostRecentlyView> {
     SuraModel(englishName: "Yunus", arabicName: "يونس", versesCount: "109 Verses"),
   ];
 
-  // دالة لإضافة أو نقل السورة المفتوحة لتصبح في أول القائمة
   void addRecentlyOpenedSura(SuraModel sura) {
     setState(() {
       recentSuras.removeWhere((item) => item.englishName == sura.englishName);

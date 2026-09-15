@@ -24,6 +24,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/hadith.svg
   String get hadith => 'assets/images/hadith.svg';
 
+  /// File path: assets/images/hadith_bg.png
+  AssetGenImage get hadithBg =>
+      const AssetGenImage('assets/images/hadith_bg.png');
+
+  /// File path: assets/images/hadith_item_bg.png
+  AssetGenImage get hadithItemBg =>
+      const AssetGenImage('assets/images/hadith_item_bg.png');
+
   /// File path: assets/images/head.png
   AssetGenImage get head => const AssetGenImage('assets/images/head.png');
 
@@ -81,6 +89,8 @@ class $AssetsImagesGen {
     mosque,
     appIconSplash,
     hadith,
+    hadithBg,
+    hadithItemBg,
     head,
     header,
     img1,
