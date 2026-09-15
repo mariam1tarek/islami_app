@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/common/app_colors.dart';
+import 'package:islami_app/gen/assets.gen.dart';
 import 'package:islami_app/models/intro_content.dart';
 import 'package:islami_app/widgets/intro_dot_indicator.dart';
 import 'package:islami_app/widgets/intro_page_item.dart';
+import 'package:islami_app/screens/home_screen.dart'; // مسار صفحة HomeScreen
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -52,27 +54,7 @@ class _IntroScreenState extends State<IntroScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child: Column(
             children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset(
-                    'assets/images/Mosque.png',
-                    height: 151,
-                    width: 291,
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    child: const Text(
-                      'Islami',
-                      style: TextStyle(
-                        fontFamily: 'Kamali',
-                        fontSize: 60,
-                        color: AppColors.goldColor,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              Image.asset(Assets.images.header.path),
               Expanded(
                 child: PageView.builder(
                   controller: _pageController,
@@ -122,7 +104,13 @@ class _IntroScreenState extends State<IntroScreen> {
                           curve: Curves.easeInOut,
                         );
                       } else {
-                        // الانتقال للشاشة الرئيسية
+                        // الانتقال لـ HomeScreen باستخدام pushReplacement لمنع الرجوع لـ IntroScreen
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
+                        );
                       }
                     },
                     child: Text(
