@@ -8,13 +8,36 @@ import 'package:islami_app/tabs/quran/views/sura_details_view.dart';
 
 class SurasListView extends StatelessWidget {
   final Function(SuraModel) onSuraSelected;
+  final String searchQuery;
 
-  SurasListView({super.key, required this.onSuraSelected});
+  const SurasListView({
+    super.key,
+    required this.onSuraSelected,
+    required this.searchQuery,
+  });
 
-  final List<SuraModel> suras = SuraData.getAllSuras();
+  // دالة مساعدة لتنظيف النصوص العربية (إزالة التشكيل والهمزات لتسهيل البحث)
+  String normalizeArabic(String text) {
+    return text
+        .replaceAll(RegExp(r'[ًٍُِّْآأإٱؤئáàâäãåąæçćčèéêëęîïłńòóôöõøùúûüųźżžśš¢£€¥ªº]'), '')
+        .replaceAll('أ', 'ا')
+        .replaceAll('إ', 'ا')
+        .replaceAll('آ', 'ا')
+        .replaceAll('ة', 'ه');
+  }
 
   @override
   Widget build(BuildContext context) {
+    // فلترة السور بناءً على الإنجليزي أو العربي مع دعم إزالة الاختلافات البسيطة
+    final List<SuraModel> filteredSuras = SuraData.getAllSuras().where((sura) {
+      final query = normalizeArabic(searchQuery.trim().toLowerCase());
+
+      final englishName = sura.englishName.toLowerCase();
+      final arabicName = normalizeArabic(sura.arabicName);
+
+      return englishName.contains(query) || arabicName.contains(query);
+    }).toList();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -27,12 +50,22 @@ class SurasListView extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        ListView.separated(
-          itemCount: suras.length,
+        filteredSuras.isEmpty
+            ? const Center(
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              "No Sura found",
+              style: TextStyle(color: AppColors.wihteColor, fontSize: 16),
+            ),
+          ),
+        )
+            : ListView.separated(
+          itemCount: filteredSuras.length,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            final sura = suras[index];
+            final sura = filteredSuras[index];
             return InkWell(
               onTap: () async {
                 await Navigator.push(

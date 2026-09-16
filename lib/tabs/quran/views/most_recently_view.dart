@@ -10,6 +10,10 @@ class MostRecentlyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (recentSuras.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

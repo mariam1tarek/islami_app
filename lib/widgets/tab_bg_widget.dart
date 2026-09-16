@@ -10,7 +10,7 @@ class TabBgWidget extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.asset(imagePath, fit: BoxFit.cover),
+        Image.asset(imagePath, fit: BoxFit.fill),
         DecoratedBox(
           decoration: BoxDecoration(
             gradient: LinearGradient(

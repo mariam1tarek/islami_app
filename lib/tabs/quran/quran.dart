@@ -16,8 +16,10 @@ class Quran extends StatefulWidget {
 }
 
 class _QuranState extends State<Quran> {
+  // جعل القائمة تبدأ فارغة تماماً عند فتح التطبيق
+  final List<SuraModel> recentSuras = [];
 
-  final List<SuraModel> recentSuras = SuraData.getAllSuras().take(10).toList();
+  String searchQuery = "";
 
   void addRecentlyOpenedSura(SuraModel sura) {
     setState(() {
@@ -42,6 +44,11 @@ class _QuranState extends State<Quran> {
                   Assets.images.header.image(),
                   const SizedBox(height: 20),
                   TextField(
+                    onChanged: (value) {
+                      setState(() {
+                        searchQuery = value;
+                      });
+                    },
                     style: const TextStyle(color: AppColors.wihteColor),
                     decoration: InputDecoration(
                       filled: true,
@@ -83,9 +90,14 @@ class _QuranState extends State<Quran> {
                     ),
                   ),
                   const SizedBox(height: 20),
+
                   MostRecentlyView(recentSuras: recentSuras),
+
                   const SizedBox(height: 20),
-                  SurasListView(onSuraSelected: addRecentlyOpenedSura),
+                  SurasListView(
+                    onSuraSelected: addRecentlyOpenedSura,
+                    searchQuery: searchQuery,
+                  ),
                 ],
               ),
             ),
