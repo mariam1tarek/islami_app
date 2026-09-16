@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:islami_app/common/app_colors.dart';
 import 'package:islami_app/gen/assets.gen.dart';
-import 'package:islami_app/models/sura_data.dart';
 import 'package:islami_app/models/sura_model.dart';
 import 'package:islami_app/tabs/quran/views/most_recently_view.dart';
 import 'package:islami_app/tabs/quran/views/suras_list_view.dart';
