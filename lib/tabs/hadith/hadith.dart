@@ -42,7 +42,6 @@ class Hadith extends StatelessWidget {
                         child: Stack(
                           fit: StackFit.expand,
                           children: [
-                            // خلفية الكارد
                             Image.asset(
                               Assets.images.hadithItemBg.path,
                               fit: BoxFit.fill,

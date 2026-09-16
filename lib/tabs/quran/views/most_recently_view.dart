@@ -3,35 +3,10 @@ import 'package:islami_app/common/app_colors.dart';
 import 'package:islami_app/gen/assets.gen.dart';
 import 'package:islami_app/models/sura_model.dart';
 
+class MostRecentlyView extends StatelessWidget {
+  final List<SuraModel> recentSuras;
 
-
-class MostRecentlyView extends StatefulWidget {
-  const MostRecentlyView({super.key});
-
-  @override
-  State<MostRecentlyView> createState() => _MostRecentlyViewState();
-}
-
-class _MostRecentlyViewState extends State<MostRecentlyView> {
-  final List<SuraModel> recentSuras = [
-    SuraModel(englishName: "Al-Fatiha", arabicName: "الفاتحة", versesCount: "7 Verses"),
-    SuraModel(englishName: "Al-Baqarah", arabicName: "البقرة", versesCount: "286 Verses"),
-    SuraModel(englishName: "Aal-E-Imran", arabicName: "آل عمران", versesCount: "200 Verses"),
-    SuraModel(englishName: "An-Nisa", arabicName: "النساء", versesCount: "176 Verses"),
-    SuraModel(englishName: "Al-Ma'idah", arabicName: "المائدة", versesCount: "120 Verses"),
-    SuraModel(englishName: "Al-An'am", arabicName: "الأنعام", versesCount: "165 Verses"),
-    SuraModel(englishName: "Al-A'raf", arabicName: "الأعراف", versesCount: "206 Verses"),
-    SuraModel(englishName: "Al-Anfal", arabicName: "الأنفال", versesCount: "75 Verses"),
-    SuraModel(englishName: "At-Tawbah", arabicName: "التوبة", versesCount: "129 Verses"),
-    SuraModel(englishName: "Yunus", arabicName: "يونس", versesCount: "109 Verses"),
-  ];
-
-  void addRecentlyOpenedSura(SuraModel sura) {
-    setState(() {
-      recentSuras.removeWhere((item) => item.englishName == sura.englishName);
-      recentSuras.insert(0, sura);
-    });
-  }
+  const MostRecentlyView({super.key, required this.recentSuras});
 
   @override
   Widget build(BuildContext context) {
