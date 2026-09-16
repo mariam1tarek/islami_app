@@ -47,7 +47,6 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // 1. الصورة الخلفية تغطي الشاشة بالكامل بما فيها مكان الـ AppBar
           TabBgWidget(imagePath: Assets.images.ayaBg.path),
 
           SafeArea(
@@ -55,7 +54,6 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 children: [
-                  // 2. تصميم شريط العلوي (AppBar بديل) جوه الـ Stack عشان الصورة تحته
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -71,7 +69,7 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(width: 48), // مساحة عشان الاسم يبقى في المنتصف مظبوط
+                      const SizedBox(width: 48),
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -85,7 +83,6 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
                   ),
                   const SizedBox(height: 20),
 
-                  // 3. محتوى الآيات
                   Expanded(
                     child: suraContent.isEmpty
                         ? const Center(

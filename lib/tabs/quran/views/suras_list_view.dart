@@ -16,7 +16,6 @@ class SurasListView extends StatelessWidget {
     required this.searchQuery,
   });
 
-  // دالة مساعدة لتنظيف النصوص العربية (إزالة التشكيل والهمزات لتسهيل البحث)
   String normalizeArabic(String text) {
     return text
         .replaceAll(RegExp(r'[ًٍُِّْآأإٱؤئáàâäãåąæçćčèéêëęîïłńòóôöõøùúûüųźżžśš¢£€¥ªº]'), '')
@@ -28,7 +27,6 @@ class SurasListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // فلترة السور بناءً على الإنجليزي أو العربي مع دعم إزالة الاختلافات البسيطة
     final List<SuraModel> filteredSuras = SuraData.getAllSuras().where((sura) {
       final query = normalizeArabic(searchQuery.trim().toLowerCase());
 

@@ -15,7 +15,6 @@ class Quran extends StatefulWidget {
 }
 
 class _QuranState extends State<Quran> {
-  // جعل القائمة تبدأ فارغة تماماً عند فتح التطبيق
   final List<SuraModel> recentSuras = [];
 
   String searchQuery = "";
