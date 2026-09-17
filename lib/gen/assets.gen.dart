@@ -73,6 +73,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/sabha.svg
   String get sabha => 'assets/images/sabha.svg';
 
+  /// File path: assets/images/sabha_bg.png
+  AssetGenImage get sabhaBg =>
+      const AssetGenImage('assets/images/sabha_bg.png');
+
+  /// File path: assets/images/sabha_img.png
+  AssetGenImage get sabhaImg =>
+      const AssetGenImage('assets/images/sabha_img.png');
+
   /// File path: assets/images/sura_img.png
   AssetGenImage get suraImg =>
       const AssetGenImage('assets/images/sura_img.png');
@@ -107,6 +115,8 @@ class $AssetsImagesGen {
     quranTab,
     radio,
     sabha,
+    sabhaBg,
+    sabhaImg,
     suraImg,
     suraStarPng,
     suraStarSvg,
