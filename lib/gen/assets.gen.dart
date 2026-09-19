@@ -64,6 +64,9 @@ class $AssetsImagesGen {
   AssetGenImage get imgBranding =>
       const AssetGenImage('assets/images/img_branding.png');
 
+  /// File path: assets/images/mosque2.png
+  AssetGenImage get mosque2 => const AssetGenImage('assets/images/mosque2.png');
+
   /// File path: assets/images/quran.svg
   String get quran => 'assets/images/quran.svg';
 
@@ -73,6 +76,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/radio.svg
   String get radio => 'assets/images/radio.svg';
+
+  /// File path: assets/images/radio_bg.png
+  AssetGenImage get radioBg =>
+      const AssetGenImage('assets/images/radio_bg.png');
 
   /// File path: assets/images/sabha.svg
   String get sabha => 'assets/images/sabha.svg';
@@ -84,6 +91,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/sabha_body.png
   AssetGenImage get sabhaBody =>
       const AssetGenImage('assets/images/sabha_body.png');
+
+  /// File path: assets/images/sound_wave.svg
+  String get soundWave => 'assets/images/sound_wave.svg';
 
   /// File path: assets/images/sura_img.png
   AssetGenImage get suraImg =>
@@ -116,12 +126,15 @@ class $AssetsImagesGen {
     img4,
     img5,
     imgBranding,
+    mosque2,
     quran,
     quranTab,
     radio,
+    radioBg,
     sabha,
     sabhaBg,
     sabhaBody,
+    soundWave,
     suraImg,
     suraStarPng,
     suraStarSvg,
