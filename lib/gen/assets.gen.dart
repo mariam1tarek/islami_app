@@ -38,6 +38,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/head.png
   AssetGenImage get head => const AssetGenImage('assets/images/head.png');
 
+  /// File path: assets/images/head_sabha.png
+  AssetGenImage get headSabha =>
+      const AssetGenImage('assets/images/head_sabha.png');
+
   /// File path: assets/images/header.png
   AssetGenImage get header => const AssetGenImage('assets/images/header.png');
 
@@ -77,9 +81,9 @@ class $AssetsImagesGen {
   AssetGenImage get sabhaBg =>
       const AssetGenImage('assets/images/sabha_bg.png');
 
-  /// File path: assets/images/sabha_img.png
-  AssetGenImage get sabhaImg =>
-      const AssetGenImage('assets/images/sabha_img.png');
+  /// File path: assets/images/sabha_body.png
+  AssetGenImage get sabhaBody =>
+      const AssetGenImage('assets/images/sabha_body.png');
 
   /// File path: assets/images/sura_img.png
   AssetGenImage get suraImg =>
@@ -104,6 +108,7 @@ class $AssetsImagesGen {
     hadithBg,
     hadithItemBg,
     head,
+    headSabha,
     header,
     img1,
     img2,
@@ -116,7 +121,7 @@ class $AssetsImagesGen {
     radio,
     sabha,
     sabhaBg,
-    sabhaImg,
+    sabhaBody,
     suraImg,
     suraStarPng,
     suraStarSvg,
